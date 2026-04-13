@@ -3,43 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Houston Burger - Chef Mauricio Marín</title>
+    <title>Houston Burger | Chef Mauricio Marín - Burger Master 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #1a0f00; color: #f4f4f4; font-family: 'Arial', sans-serif; margin: 0; text-align: center; }
-        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('smoke-bg.jpg'); padding: 50px 20px; }
-        h1 { color: #ff8c00; font-size: 3rem; margin-bottom: 0; }
-        .pitmaster-section { border-left: 4px solid #ff8c00; margin: 20px; padding: 15px; background: #2a1b0a; border-radius: 8px; }
-        .burger-card { background: #fff; color: #333; margin: 20px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-        .btn-vote { background: #e63946; color: white; padding: 15px 30px; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; }
-        .footer { font-size: 0.8rem; padding: 20px; color: #888; }
+        :root {
+            --primary-orange: #ff8c00;
+            --dark-bg: #0d0d0d;
+            --card-bg: #1a1a1a;
+            --text-light: #f4f4f4;
+            --accent-red: #e63946;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&q=80'); /* Imagen de humo/fuego */
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary-orange);
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 4rem;
+            color: var(--primary-orange);
+            margin: 0;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        /* Seccion Pitmaster */
+        .pitmaster-card {
+            background: var(--card-bg);
+            margin: -30px 20px 20px 20px;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary-orange);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 10;
+        }
+
+        .pitmaster-card h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: var(--primary-orange);
+            margin-top: 0;
+        }
+
+        /* Burger Details */
+        .burger-container {
+            padding: 20px;
+        }
+
+        .burger-image {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(255,140,0,0.3);
+        }
+
+        .price-tag {
+            background: var(--primary-orange);
+            color: #000;
+            display: inline-block;
+            padding: 10px 25px;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2.5rem;
+            border-radius: 50px;
+            margin: 20px 0;
+        }
+
+        /* Ingredientes Grid */
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .ingredient-item {
+            background: #252525;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .ingredient-item strong {
+            color: var(--primary-orange);
+            display: block;
+        }
+
+        /* Botón de Voto */
+        .cta-button {
+            background: var(--accent-red);
+            color: white;
+            text-decoration: none;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8rem;
+            display: inline-block;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 20px rgba(230, 57, 70, 0.4);
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Trayectoria Section */
+        .trayectoria {
+            background: #111;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .badge {
+            border: 1px solid var(--primary-orange);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        /* Footer con Créditos */
+        footer {
+            padding: 40px 20px;
+            background: #000;
+            color: #666;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .vibras-logo {
+            color: var(--primary-orange);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.8rem; }
+            .ingredients-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="hero">
+    <header class="hero">
+        <p class="subtitle">A Bocados Presenta</p>
         <h1>HOUSTON BURGER</h1>
-        <p>A BOCADOS × CHEF MAURICIO MARÍN</p>
-    </div>
+        <p style="font-size: 1.2rem;">La obra maestra del Chef Mauricio Marín</p>
+    </header>
 
-    <div class="pitmaster-section">
-        <h3>El Maestro Pitmaster</h3>
-        <p>Con la experiencia de <strong>Lobo Feroz y Bramante</strong>, el Chef Mauricio Marín trae a Caucasia el secreto del ahumado de 16 horas. No es solo comida, es el dominio del humo y el fuego.</p>
-    </div>
-
-    <div class="burger-card">
-        <img src="tu-imagen-houston.jpg" alt="Houston Burger" style="width:100%">
-        <div style="padding: 20px;">
-            <h2>$21.000 COP</h2>
-            <p>Brisket 16H • Salsa Filet Mignon Trufada • Pan Brioche • Cebolla Puerro</p>
+    <section class="pitmaster-card">
+        <h2>¿Qué es un Pitmaster?</h2>
+        <p>Es el guardián del fuego. El Chef <strong>Mauricio Marín</strong> trae a Caucasia la disciplina del <em>Low & Slow</em>. Tras su paso por referentes como <strong>Lobo Feroz</strong> y <strong>Bramante</strong>, hoy domina el humo para crear una carne que no se corta, se deshace.</p>
+        <div style="text-align: center;">
+            <span class="badge">Ahumado 16 Horas</span>
+            <span class="badge">Leña Seleccionada</span>
+            <span class="badge">Técnica Internacional</span>
         </div>
-    </div>
+    </section>
 
-    <a href="#" class="btn-vote">¡QUIERO MI HOUSTON Y VOTAR!</a>
+    <main class="burger-container" style="text-align: center;">
+        <img src="https://vibraspositivas.github.io/houston-burger.jpg" alt="Houston Burger Brisket" class="burger-image">
+        <br>
+        <div class="price-tag">$21.000 COP</div>
 
-    <div class="footer">
-        Desarrollado por <strong>VIBRAS POSITIVAS HM</strong><br>
-        &copy; 2026 - Derechos Reservados a nombre de Vibras Positivas.
-    </div>
+        <h3>Anatomía de la Victoria</h3>
+        <div class="ingredients-grid">
+            <div class="ingredient-item">
+                <strong>Brisket Ahumado 16H</strong>
+                Pecho de res premium suave como mantequilla.
+            </div>
+            <div class="ingredient-item">
+                <strong>Salsa Filet Mignon</strong>
+                Reducción trufada de alta cocina.
+            </div>
+            <div class="ingredient-item">
+                <strong>Pan Brioche</strong>
+                Receta artesanal de textura sedosa.
+            </div>
+            <div class="ingredient-item">
+                <strong>Toque Crujiente</strong>
+                Cebolla puerro y encurtidos de la casa.
+            </div>
+        </div>
+
+        <a href="https://tuliorecomienda.com" target="_blank" class="cta-button">VOTAR EN BURGER MASTER 2026</a>
+    </main>
+
+    <section class="trayectoria" style="text-align: center;">
+        <h2 style="font-family: 'Bebas Neue'; color: var(--primary-orange);">De las Grandes Ligas a Caucasia</h2>
+        <p style="max-width: 600px; margin: 0 auto; padding: 0 20px;">
+            El Chef Mauricio Marín ha diseñado esta burger para ganar. Su experiencia en Bogotá en los mejores ahumadores del país garantiza que cada bocado de la "Houston" sea una experiencia religiosa para el paladar.
+        </p>
+    </section>
+
+    <footer>
+        <p>DESARROLLADO POR <span class="vibras-logo">VIBRAS POSITIVAS HM</span></p>
+        <p>Todo proyecto de software desarrollado incluye los créditos de derechos de autor a nombre de Vibras Positivas.</p>
+        <p>&copy; 2026 Caucasia, Antioquia - Colombia</p>
+    </footer>
 
 </body>
 </html>
