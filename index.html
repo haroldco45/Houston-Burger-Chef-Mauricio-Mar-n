@@ -12,6 +12,7 @@
             --dark: #0a0a0a;
             --gray: #1a1a1a;
             --white: #f4f4f4;
+            --red: #e63946;
         }
 
         body {
@@ -22,7 +23,6 @@
             text-align: center;
         }
 
-        /* Hero Section */
         header {
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1529692236671-f1f6e9460272?q=80&w=2070');
             background-size: cover;
@@ -45,7 +45,6 @@
             text-transform: uppercase;
         }
 
-        /* Imagen Principal - Ajustada a houston.png */
         .main-image-container {
             margin: 20px auto;
             max-width: 600px;
@@ -59,7 +58,6 @@
             display: block;
         }
 
-        /* Sección Pitmaster */
         .pitmaster-info {
             background: var(--gray);
             margin: 20px;
@@ -75,10 +73,6 @@
             margin-top: 0;
         }
 
-        .experience-tags {
-            margin: 15px 0;
-        }
-
         .tag {
             background: rgba(255, 140, 0, 0.1);
             border: 1px solid var(--orange);
@@ -90,9 +84,49 @@
             display: inline-block;
         }
 
-        /* Botón de Acción */
+        /* Sección de Votación */
+        .voting-steps {
+            background: #111;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px dashed var(--gold);
+            text-align: left;
+            display: inline-block;
+            max-width: 500px;
+        }
+
+        .voting-steps h3 {
+            font-family: 'Bebas Neue';
+            color: var(--gold);
+            text-align: center;
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+
+        .step-item {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: var(--orange);
+            color: black;
+            font-weight: bold;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+        }
+
         .btn-vote {
-            background: #e63946;
+            background: var(--red);
             color: white;
             text-decoration: none;
             padding: 20px 40px;
@@ -100,7 +134,7 @@
             font-family: 'Bebas Neue', cursive;
             font-size: 2rem;
             display: inline-block;
-            margin: 20px 0;
+            margin: 25px 0;
             transition: 0.3s;
             box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
         }
@@ -110,7 +144,6 @@
             background: #ff4d5a;
         }
 
-        /* Footer con créditos VIBRAS POSITIVAS HM */
         footer {
             background: #000;
             padding: 40px 20px;
@@ -144,20 +177,36 @@
 
     <section class="pitmaster-info">
         <h2>El Poder del Pitmaster</h2>
-        <p>En el mundo del BBQ, un **Pitmaster** es un maestro que domina el humo y el tiempo. El Chef **Mauricio Marín**, con su trayectoria en <strong>Lobo Feroz</strong> y <strong>Bramante</strong>, trae a Caucasia la técnica perfecta:</p>
-        
+        <p>En el mundo del BBQ, un **Pitmaster** es un maestro que domina el humo y el tiempo. El Chef **Mauricio Marín** trae a Caucasia la técnica perfecta:</p>
         <div class="experience-tags">
             <span class="tag">16 HORAS DE AHUMADO</span>
             <span class="tag">BRISKET ARTESANAL</span>
             <span class="tag">ALTA COCINA TRUFADA</span>
         </div>
-
-        <p style="font-size: 1.1rem; color: #bbb;">
-            "Mientras el mundo duerme, nosotros cuidamos el fuego."
-        </p>
     </section>
 
-    <a href="https://tuliorecomienda.com" target="_blank" class="btn-vote">¡VOTAR POR LA HOUSTON!</a>
+    <div class="voting-steps">
+        <h3>¿CÓMO VOTAR POR LA HOUSTON?</h3>
+        <div class="step-item">
+            <div class="step-number">1</div>
+            <div>Descarga e instala la App <strong>Tulio Recomienda</strong>.</div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <div>Regístrate con tus datos básicos.</div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">3</div>
+            <div>Toca el icono <strong>MASTER</strong> y elige la zona <strong>Medellín/Antioquia</strong>.</div>
+        </div>
+        <div class="step-item">
+            <div class="step-number">4</div>
+            <div>Busca <strong>HOUSTON</strong>, califícanos con <strong>5 ESTRELLAS</strong> y cuéntanos qué te gustó.</div>
+        </div>
+    </div>
+
+    <br>
+    <a href="https://play.google.com/store/apps/details?id=com.tuliorecomienda.tulio_recomienda" target="_blank" class="btn-vote">DESCARGAR APP Y VOTAR</a>
 
     <section style="padding: 20px;">
         <h3 style="color: var(--gold); font-family: 'Bebas Neue'; font-size: 2rem;">PRECIO BURGER MASTER: $21.000 COP</h3>
